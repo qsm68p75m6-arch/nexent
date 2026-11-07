@@ -1,0 +1,12 @@
+# 密钥与环境（严禁提交真实密钥）
+.env
+*.pem
+*.key
+
+# 系统垃圾
+Thumbs.db
+Desktop.ini
+
+# 压缩包与临时产物
+*.zip
+__pycache__/

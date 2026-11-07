@@ -1,0 +1,125 @@
+{
+  "warning": "仅导入此处显式列出的资料，禁止上传evaluator_only、指南、答案、结果记录或整个压缩包。各知识库使用独立索引；不要依赖删文件模拟缺证。",
+  "text_control": {
+    "POC_TEXT_BASE": {
+      "folder": "source_md",
+      "extension": ".md",
+      "assets": [
+        "D01_authorization_v1",
+        "D02_ownership_diagram",
+        "D03_balance_20260630",
+        "D04_duplicate_notice"
+      ],
+      "cases": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ]
+    },
+    "POC_TEXT_MISSING": {
+      "folder": "source_md",
+      "extension": ".md",
+      "assets": [
+        "D02_ownership_diagram",
+        "D03_balance_20260630",
+        "D04_duplicate_notice"
+      ],
+      "cases": [
+        "C05"
+      ]
+    }
+  },
+  "image_experiment": {
+    "POC_BASE_snapshot_JUNE": {
+      "folder": "import_docs",
+      "extension": ".pdf",
+      "assets": [
+        "D01_authorization_v1",
+        "D02_ownership_diagram",
+        "D03_balance_20260630",
+        "D04_duplicate_notice"
+      ],
+      "cases": [
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ]
+    },
+    "POC_MISSING": {
+      "folder": "import_docs",
+      "extension": ".pdf",
+      "assets": [
+        "D02_ownership_diagram",
+        "D03_balance_20260630",
+        "D04_duplicate_notice"
+      ],
+      "cases": [
+        "C05"
+      ]
+    },
+    "POC_CONFLICT": {
+      "folder": "import_docs",
+      "extension": ".pdf",
+      "assets": [
+        "D01_authorization_v1",
+        "D02_ownership_diagram",
+        "D03_balance_20260630",
+        "D04_duplicate_notice",
+        "D07_conflicting_notice"
+      ],
+      "cases": [
+        "C06"
+      ]
+    },
+    "POC_BASE_snapshot_JULY": {
+      "folder": "import_docs",
+      "extension": ".pdf",
+      "assets": [
+        "D01_authorization_v1",
+        "D02_ownership_diagram",
+        "D03_balance_20260630",
+        "D04_duplicate_notice",
+        "D05_authorization_v2",
+        "D06_balance_20260731"
+      ],
+      "cases": [
+        "C07",
+        "C01",
+        "C02",
+        "C03",
+        "C04"
+      ]
+    },
+    "POC_BASE_snapshot_AUGUST": {
+      "folder": "import_docs",
+      "extension": ".pdf",
+      "assets": [
+        "D01_authorization_v1",
+        "D02_ownership_diagram",
+        "D03_balance_20260630",
+        "D04_duplicate_notice",
+        "D05_authorization_v2",
+        "D06_balance_20260731",
+        "D08_release_event"
+      ],
+      "cases": [
+        "C08",
+        "C03",
+        "C07"
+      ]
+    }
+  },
+  "snapshot_note": "JULY与AUGUST是同一BASE库的增量快照名，不是要求再建两个库；每次增量先记录资产列表与索引完成状态。",
+  "image_experiment_exclusion": [
+    "source_md/*",
+    "evaluator_only/*",
+    "START_HERE.md",
+    "ROUND_LOG.md",
+    "agent_config/*",
+    "environment_snapshot.json",
+    "asset_manifest.json",
+    "corpus_manifests.json"
+  ]
+}

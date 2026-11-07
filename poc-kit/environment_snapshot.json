@@ -1,0 +1,89 @@
+{
+  "observed_at": "2026-10-22T23:37:08.400666+09:00",
+  "timezone": "Asia/Tokyo",
+  "docker_image_tag_observed": "v2.7.0",
+  "local_checkout": {
+    "branch": "develop",
+    "commit_prefix": "4d84586e49",
+    "v2.7.0_tag_commit_prefix": "519b9b17c7",
+    "note": "源码分支不等于运行镜像；能力只读核验采用v2.7.0 tag。"
+  },
+  "user_reported": {
+    "text_model_configured": true,
+    "embedding_configured": true,
+    "multimodal_model_configured": true
+  },
+  "http_probes": [
+    {
+      "url": "http://127.0.0.1:3000",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://127.0.0.1:3001",
+      "status": 200,
+      "content_type": "text/html; charset=utf-8"
+    },
+    {
+      "url": "http://127.0.0.1:5010/health/live",
+      "status": 200,
+      "content_type": "application/json",
+      "health_fields": {
+        "status": "alive"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5010/health/ready",
+      "status": 200,
+      "content_type": "application/json",
+      "health_fields": {
+        "status": "ready"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5014/health/live",
+      "status": 200,
+      "content_type": "application/json",
+      "health_fields": {
+        "status": "alive"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5014/health/ready",
+      "status": 200,
+      "content_type": "application/json",
+      "health_fields": {
+        "status": "ready"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5013/health/live",
+      "status": 200,
+      "content_type": "application/json",
+      "health_fields": {
+        "status": "alive"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5013/health/ready",
+      "status": 200,
+      "content_type": "application/json",
+      "health_fields": {
+        "status": "ready"
+      }
+    },
+    {
+      "url": "http://127.0.0.1:5010/indices/health",
+      "status": 200,
+      "content_type": "application/json",
+      "health_fields": {
+        "status": "healthy"
+      }
+    }
+  ],
+  "evidence_limits": [
+    "未调用用户模型服务，模型配置为用户自述，尚未测试工具调用/检索/图像处理。",
+    "容器running、HTTP可达与进程ready不证明外部依赖及业务端到端正常。",
+    "未读取凭据，未修改Nexent数据库/配置/源码，未重启容器。"
+  ]
+}

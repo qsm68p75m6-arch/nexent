@@ -1,0 +1,68 @@
+[
+  {
+    "asset_id": "D01_authorization_v1",
+    "pdf": "import_docs/D01_authorization_v1.pdf",
+    "text_control": "source_md/D01_authorization_v1.md",
+    "provenance": "synthetic_fixture",
+    "pages": 1,
+    "sha256": "24113a4ba20096fac78d398023738d0dbb5ba32099b0f15cb0f73cb55da593a1"
+  },
+  {
+    "asset_id": "D02_ownership_diagram",
+    "pdf": "import_docs/D02_ownership_diagram.pdf",
+    "text_control": "source_md/D02_ownership_diagram.md",
+    "provenance": "synthetic_fixture",
+    "pages": 1,
+    "image_only": true,
+    "hidden_text_characters": 0,
+    "sha256": "486102d4ce72a0e054a65edcb0c0026efcd5ec590497e31a13010a5395881876"
+  },
+  {
+    "asset_id": "D03_balance_20260630",
+    "pdf": "import_docs/D03_balance_20260630.pdf",
+    "text_control": "source_md/D03_balance_20260630.md",
+    "provenance": "synthetic_fixture",
+    "pages": 1,
+    "sha256": "a57fb9a5a576e416e1c03c8d87c65be8b92a40398754f67df9f60b1b64ea2be8"
+  },
+  {
+    "asset_id": "D04_duplicate_notice",
+    "pdf": "import_docs/D04_duplicate_notice.pdf",
+    "text_control": "source_md/D04_duplicate_notice.md",
+    "provenance": "synthetic_fixture",
+    "pages": 1,
+    "sha256": "a537c2b35ecc09afced350f13e69ba563474da5005329da97f7d3d373a77441b"
+  },
+  {
+    "asset_id": "D05_authorization_v2",
+    "pdf": "import_docs/D05_authorization_v2.pdf",
+    "text_control": "source_md/D05_authorization_v2.md",
+    "provenance": "synthetic_fixture",
+    "pages": 1,
+    "sha256": "59969bb37ffc751aa4f9b7ca9527fa9bbefaf3c5c91d5039d319d5133b5ab1a9"
+  },
+  {
+    "asset_id": "D06_balance_20260731",
+    "pdf": "import_docs/D06_balance_20260731.pdf",
+    "text_control": "source_md/D06_balance_20260731.md",
+    "provenance": "synthetic_fixture",
+    "pages": 1,
+    "sha256": "c311985324dd9542a9b7d8d248b92a9bfd3a30c423e5965bd5c6146f92f8dd31"
+  },
+  {
+    "asset_id": "D07_conflicting_notice",
+    "pdf": "import_docs/D07_conflicting_notice.pdf",
+    "text_control": "source_md/D07_conflicting_notice.md",
+    "provenance": "synthetic_fixture",
+    "pages": 1,
+    "sha256": "59e016f9b3fff5ac998a3566485b1593051807a04e062a40fe858d9f51b915e0"
+  },
+  {
+    "asset_id": "D08_release_event",
+    "pdf": "import_docs/D08_release_event.pdf",
+    "text_control": "source_md/D08_release_event.md",
+    "provenance": "synthetic_fixture",
+    "pages": 1,
+    "sha256": "959a8c5ab662513d3aa3f17bf4d4821044e7ec42c7523081f20a1b9584e11142"
+  }
+]

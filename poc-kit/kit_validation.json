@@ -1,0 +1,10 @@
+{
+  "pdf_count": 8,
+  "case_count": 8,
+  "all_pdfs_single_page": true,
+  "image_fixture_has_hidden_text": false,
+  "case_corpus_references_valid": true,
+  "missing_evidence_corpora_isolated_in_manifest": true,
+  "pdf_rendering_success": true,
+  "note": "文件与受控真值一致性检查，不是Nexent端到端通过记录。"
+}

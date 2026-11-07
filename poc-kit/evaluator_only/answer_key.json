@@ -1,0 +1,152 @@
+[
+  {
+    "case_id": "C01",
+    "corpus_snapshot": "POC_BASE_snapshot_JUNE",
+    "query": "截至2026年6月30日，合同G01的期末担保余额是多少？请给金额、单位、统计时点和来源。",
+    "expected_status": "SUPPORTED",
+    "expected_facts": {
+      "G01_balance_wan": 3000
+    },
+    "required_evidence_assets": [
+      "D03_balance_20260630"
+    ],
+    "acceptance": "数值、合同、日期正确；引用到G01当期行。"
+  },
+  {
+    "case_id": "C02",
+    "corpus_snapshot": "POC_BASE_snapshot_JUNE",
+    "query": "截至2026年6月30日，按授权A1口径，A公司范围内担保余额合计是多少？请列纳入和排除的合同、单位换算及去重依据。",
+    "expected_status": "SUPPORTED",
+    "expected_facts": {
+      "total_wan": 5500,
+      "included": [
+        "G01",
+        "G02"
+      ],
+      "excluded": [
+        "G03"
+      ],
+      "G02_wan": 2500
+    },
+    "required_evidence_assets": [
+      "D01_authorization_v1",
+      "D02_ownership_diagram",
+      "D03_balance_20260630",
+      "D04_duplicate_notice"
+    ],
+    "acceptance": "3,000+2,500=5,500万元；不加G03、汇总行、历史列或重复G01。"
+  },
+  {
+    "case_id": "C03",
+    "corpus_snapshot": "POC_BASE_snapshot_JUNE",
+    "query": "截至2026年6月30日，上述担保余额是否超出当时有效的授权A1？超出或剩余额度是多少？请说明证据限制。",
+    "expected_status": "EXCEEDS_GIVEN_AUTHORIZATION",
+    "expected_facts": {
+      "total_wan": 5500,
+      "limit_wan": 5000,
+      "excess_wan": 500
+    },
+    "required_evidence_assets": [
+      "D01_authorization_v1",
+      "D02_ownership_diagram",
+      "D03_balance_20260630"
+    ],
+    "acceptance": "超出所给测试授权口径500万元；不升级为现实违法认定。"
+  },
+  {
+    "case_id": "C04",
+    "corpus_snapshot": "POC_BASE_snapshot_JUNE",
+    "query": "合同G03的受益公司能否直接适用授权A1？请根据股权资料解释，并说明还需要什么依据。",
+    "expected_status": "OUTSIDE_GIVEN_AUTHORIZATION_SCOPE",
+    "expected_facts": {
+      "ownership_percent": 40,
+      "required_percent": 50
+    },
+    "required_evidence_assets": [
+      "D01_authorization_v1",
+      "D02_ownership_diagram",
+      "D03_balance_20260630"
+    ],
+    "acceptance": "乙40%低于A1要求的50%；不适用A1，需要另查授权；不称没有任何授权。"
+  },
+  {
+    "case_id": "C05",
+    "corpus_snapshot": "POC_MISSING",
+    "query": "截至2026年6月30日，A公司担保余额是否超出有效授权？请列出可确定事实、无法确定事项和待补资料。",
+    "expected_status": "INSUFFICIENT_EVIDENCE",
+    "expected_facts": {
+      "limit_wan": null,
+      "scope_total_wan": null
+    },
+    "required_evidence_assets": [
+      "D02_ownership_diagram",
+      "D03_balance_20260630"
+    ],
+    "acceptance": "缺授权范围与额度，不能给唯一适用授权总额或是否超额；允许报告全部三笔6500万元、甲公司两笔5500万元等带口径事实，不能将其直接当授权范围结论。"
+  },
+  {
+    "case_id": "C06",
+    "corpus_snapshot": "POC_CONFLICT",
+    "query": "截至2026年6月30日，G01的余额和授权A1范围内总额能否确定为唯一数值？如有冲突请定位，不要擅自选择来源。",
+    "expected_status": "EVIDENCE_CONFLICT",
+    "expected_facts": {
+      "G01_candidates_wan": [
+        3000,
+        3200
+      ],
+      "unique_total_wan": null,
+      "possible_totals_wan": [
+        5500,
+        5700
+      ]
+    },
+    "required_evidence_assets": [
+      "D03_balance_20260630",
+      "D04_duplicate_notice",
+      "D07_conflicting_notice"
+    ],
+    "acceptance": "识别同日同合同3000/3200冲突，无更正关系；不得给无保留唯一总额。允许说明两个可能总额均超给定上限，但不能掩盖金额不确定。"
+  },
+  {
+    "case_id": "C07",
+    "corpus_snapshot": "POC_BASE_snapshot_JULY",
+    "query": "分别核验2026年6月30日和7月31日的担保余额与当时有效授权，列出各自额度及超出额或剩余额度。不要把发布日期当生效日期。",
+    "expected_status": "TIME_VERSION_CORRECT",
+    "expected_facts": {
+      "june_total_wan": 5500,
+      "june_limit_wan": 5000,
+      "june_excess_wan": 500,
+      "july_total_wan": 5500,
+      "july_limit_wan": 8000,
+      "july_remaining_wan": 2500
+    },
+    "required_evidence_assets": [
+      "D01_authorization_v1",
+      "D02_ownership_diagram",
+      "D03_balance_20260630",
+      "D05_authorization_v2",
+      "D06_balance_20260731"
+    ],
+    "acceptance": "6月超500；7月余2500；A2在6/25发布、7/1生效，不倒用；7月余额来自新快照。"
+  },
+  {
+    "case_id": "C08",
+    "corpus_snapshot": "POC_BASE_snapshot_AUGUST",
+    "query": "合同G02于2026年8月1日解除后，授权范围内担保余额和剩余额度是多少？6月30日及7月31日历史记录应如何保留？请说明是否真的需要修改本体结构。",
+    "expected_status": "LIFECYCLE_CORRECT",
+    "expected_facts": {
+      "august_total_wan": 3000,
+      "august_limit_wan": 8000,
+      "august_remaining_wan": 5000,
+      "june_total_wan": 5500,
+      "july_total_wan": 5500
+    },
+    "required_evidence_assets": [
+      "D02_ownership_diagram",
+      "D05_authorization_v2",
+      "D06_balance_20260731",
+      "D08_release_event"
+    ],
+    "acceptance": "当前余额3000、余5000；历史总额仍5500；已有模型可表达时只更新事实，不强行本体演化。"
+  }
+]
