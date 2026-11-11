@@ -117,7 +117,66 @@
 2. **给 Agent 加"核验计划"前置 Skill**（1-2 天）：选 2 道题（T03 跨文档、T07 版本）试，对比"有规划层 vs 无规划层"的答案结构差异。这个对照实验本身就是答辩素材。
 3. **给 T01-T10 补任务类型/步数标签**（半天）：评测报告按维度分组重出一次，比只给"10/10 通过"更有说服力。
 
-## 六、核实状态汇总
+## 六、链接清单（2026-11-11 全部 HTTP 实测）
+
+> 验证方式：curl 取 HTTP 状态码（200=可达）；DOI 另用 Crossref 官方 API 核对标题、期刊、年份；GitHub 仓库取页面状态。标 ⚠️ 者为站点反爬（403/202）但 Crossref 已证 DOI 真实。
+
+### 论文（arXiv）
+
+| 论文 | 链接 | 状态 |
+|---|---|---|
+| MedAgent-Pro | https://arxiv.org/abs/2503.18968 | 200 |
+| MDAgents | https://arxiv.org/abs/2404.15155 | 200 |
+| MedAgentBoard | https://arxiv.org/abs/2505.12371 | 200 |
+| EHRAgent | https://arxiv.org/abs/2401.07128 | 200 |
+| ReConcile | https://arxiv.org/abs/2309.13007 | 200 |
+| MedRAX | https://arxiv.org/abs/2502.02673 | 200 |
+| Survey (Baymax) | https://arxiv.org/abs/2502.11211 | 200 |
+| MedAgents | https://arxiv.org/abs/2311.10537 | 200 |
+| MedAgentBench | https://arxiv.org/abs/2501.14654 | 200 |
+| KG4Diagnosis | https://arxiv.org/abs/2412.16833 | 200 |
+| Agent Hospital | https://arxiv.org/abs/2405.02957 | 200 |
+| NICE 指南 RAG | https://arxiv.org/abs/2510.02967 | 200 |
+
+### 论文（ACL Anthology / PMLR）
+
+| 论文 | 链接 | 状态 |
+|---|---|---|
+| MEDDxAgent（ACL 2025 长文） | https://aclanthology.org/2025.acl-long.677/ | 200 |
+| EHRAgent（EMNLP 2024 正式版） | https://aclanthology.org/2024.emnlp-main.1245/ | 200 |
+| KG4Diagnosis（AAAI-25 Bridge, PMLR 281） | https://proceedings.mlr.press/v281/zuo25a.html | 200 |
+
+### 论文（DOI，Crossref 已核标题）
+
+| 论文 | DOI 链接 | 状态 |
+|---|---|---|
+| AMIE 诊断对话 | https://doi.org/10.1038/s41586-025-08866-7 | 200（Nature 2025） |
+| AMIE 鉴别诊断 | https://doi.org/10.1038/s41586-025-08869-4 | Crossref 核实（Nature 2025） |
+| MedAgentBench | https://doi.org/10.1056/AIdbp2500144 | ⚠️ 403 反爬，Crossref 核实（NEJM AI 2025） |
+| GARMLE-G | https://doi.org/10.1109/JBHI.2025.3641931 | ⚠️ 202 反爬，Crossref 核实（IEEE JBHI 2025） |
+
+### 代码与项目页
+
+| 项目 | 链接 | 状态 |
+|---|---|---|
+| MedAgent-Pro | https://github.com/jinlab-imvr/MedAgent-Pro | 200 |
+| MDAgents | https://github.com/mitmedialab/MDAgents | 200 |
+| MedAgentBoard | https://medagentboard.netlify.app/ | 200 |
+| EHRAgent | https://github.com/wshi83/EhrAgent | 200 |
+| MedRAX | https://github.com/bowang-lab/MedRAX | 200 |
+| MedAgentBench | https://github.com/stanfordmlgroup/MedAgentBench | 200 |
+
+### 尚无链接（报告中已提及但未取得可核实链接）
+
+- **AI Hospital**（COLING 2025）——仅有会议名，未取到 ACL Anthology 条目
+- **MedSAFE**（npj Digital Medicine）、**MedAbstain**（EACL 2026）——弃权类研究，仅检索摘要，无确定链接
+- **CPGBench**、**Oph-Guid-RAG**、**MIMIC 相关 ColaCare**——次要参考，未取链接
+
+### CCF 等级核对入口
+
+- CCF 第七版推荐目录：https://www.ccf.org.cn/Academic_Evaluation/By_category/
+
+## 七、核实状态汇总
 
 - **已亲验（抓原页面）**：EHRAgent 的 EMNLP 2024 主会 comments；MedAgentBoard 的 NeurIPS 2025 D&B comments；MEDDxAgent 的 ACL 2025 长文页面；Survey 的 ACL 2025 Findings comments；MedAgents 的标题/作者/五步流程。
 - **未回源（仅检索摘要）**：MedAgent-Pro、MDAgents 的会议归属、MedRAX、MedAgentBench、AMIE、KG4Diagnosis、AI Hospital、GARMLE-G、弃权类研究、CCF 等级（JBHI=C、MICCAI=B）。
