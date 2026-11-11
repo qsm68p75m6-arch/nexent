@@ -16,6 +16,7 @@
 | poc-kit/ | POC 验证包：8 份合成 PDF（D01-D08）、8 道题（C01-C08）、Agent 提示词、轮次记录模板。从 [poc-kit/START_HERE.md](poc-kit/START_HERE.md) 读起 |
 | poc-review/ | 2026-10-24 复核记录：每轮判定、失败诊断（C07 工具调度失败案例在这里，答辩素材） |
 | evidence/ | 实验证据归档，命名规范见其中 README |
+| real-data/ | 真实上市公司公告评测集（沪光股份 605333 等）：公告 PDF + 评测题 + 预期答案 + 知识库绑定表 |
 | configs/ | 平台配置导出（Agent json、知识库清单、MCP 配置）。只放脱敏模板，**密钥严禁入库** |
 | context/ | Codex 阶段完整会话导出，新成员 / 新 agent 的背景阅读材料 |
 
